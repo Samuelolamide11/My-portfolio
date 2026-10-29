@@ -1,0 +1,527 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Samuel Adesanya Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a component datasheet. Left-aligned, ruled sections, spec tables, catalogue rows.
+   Colour: four signal hues, one per role lens. The chosen lens recolours the whole page. */
+:root {
+  --paper: #eef0ea;
+  --paper-2: #e3e7de;
+  --ink: #14181c;
+  --ink-soft: #4a5258;
+  --rule: #b9c0b3;
+  --board: #1f4d3a;
+  --panel: #14181c;
+  --panel-fg: #eef0ea;
+  --panel-soft: #a9b1a6;
+  --acc-ink: #14181c;
+  --acc: #f5c400;
+  --g1: #f5c400;
+  --g2: #ff7a45;
+  --g3: #8b7bff;
+  --g4: #2fd48f;
+  --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #111512;
+    --paper-2: #1a201b;
+    --ink: #e7eae1;
+    --ink-soft: #a3ab9f;
+    --rule: #333c35;
+    --board: #7cc7a0;
+    --panel: #1d241f;
+    --panel-fg: #e7eae1;
+    --panel-soft: #a3ab9f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #111512;
+  --paper-2: #1a201b;
+  --ink: #e7eae1;
+  --ink-soft: #a3ab9f;
+  --rule: #333c35;
+  --board: #7cc7a0;
+  --panel: #1d241f;
+  --panel-fg: #e7eae1;
+  --panel-soft: #a3ab9f;
+  color-scheme: dark;
+}
+
+/* role lenses: each sets the accent and the colours the name cycles through */
+body[data-lens="engineer"]    { --acc: #f5c400; --g1: #f5c400; --g2: #ffdf5e; --g3: #f5a300; --g4: #ffe98a; }
+body[data-lens="developer"]   { --acc: #2fd48f; --g1: #2fd48f; --g2: #7af0c0; --g3: #1fb6c9; --g4: #a6f5d8; }
+body[data-lens="educator"]    { --acc: #ff7a45; --g1: #ff7a45; --g2: #ffb088; --g3: #ff5a7a; --g4: #ffc9a8; }
+body[data-lens="coordinator"] { --acc: #8b7bff; --g1: #8b7bff; --g2: #b8aeff; --g3: #5b9bff; --g4: #d3ccff; }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  padding-block: 0 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 1040px; margin: 0 auto; }
+a { color: var(--board); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--acc); outline-offset: 2px; }
+
+/* scroll progress */
+.progress {
+  position: fixed; left: 0; top: env(safe-area-inset-top, 0px); height: 4px; width: 100%;
+  transform-origin: 0 50%; transform: scaleX(0); z-index: 20;
+  background: linear-gradient(90deg, var(--g1), var(--g2), var(--g3), var(--g4));
+  pointer-events: none;
+}
+
+/* top strip */
+.strip {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 24px;
+  font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--ink-soft);
+  padding-block: 18px 14px; border-bottom: 2px solid var(--ink);
+}
+
+/* hero */
+.hero { padding-block: 44px 36px; border-bottom: 1px solid var(--rule); }
+.kicker { font-family: var(--mono); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 6px; min-height: 1.6em; }
+h1 {
+  font-family: var(--display); font-weight: 900; text-transform: uppercase;
+  font-size: clamp(64px, 17vw, 168px); line-height: .84; letter-spacing: -.01em;
+  margin: 0 0 28px; text-wrap: balance;
+}
+h1 .mark {
+  background: linear-gradient(100deg, var(--g1), var(--g2), var(--g3), var(--g4), var(--g1));
+  background-size: 300% 100%;
+  color: var(--acc-ink); padding: 0 .08em;
+  box-decoration-break: clone; -webkit-box-decoration-break: clone;
+  animation: drift 9s linear infinite;
+}
+@keyframes drift { to { background-position: -300% 0; } }
+.lede { font-size: clamp(18px, 2.4vw, 22px); line-height: 1.5; max-width: 40em; margin: 0 0 24px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 32px 48px; align-items: start; }
+
+/* lens switcher */
+.lens-label { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 8px; }
+.lens { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }
+.lens button {
+  font-family: var(--mono); font-size: 12.5px; letter-spacing: .05em; text-transform: uppercase;
+  background: transparent; color: var(--ink); border: 1.5px solid var(--ink); border-radius: 0;
+  padding: 9px 13px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;
+  transition: background .2s, border-color .2s;
+}
+.lens button i { width: 10px; height: 10px; display: inline-block; border-radius: 50%; background: var(--dot, var(--acc)); }
+.lens button[data-lens="all"] i { background: conic-gradient(var(--g1), var(--g2), var(--g3), var(--g4), var(--g1)); }
+.lens button[data-lens="engineer"] { --dot: #f5c400; }
+.lens button[data-lens="developer"] { --dot: #2fd48f; }
+.lens button[data-lens="educator"] { --dot: #ff7a45; }
+.lens button[data-lens="coordinator"] { --dot: #8b7bff; }
+.lens button:hover { background: var(--paper-2); }
+.lens button[aria-pressed="true"] { background: var(--acc); color: var(--acc-ink); border-color: var(--acc); }
+.lens button[aria-pressed="true"] i { background: var(--acc-ink); }
+.open-to { font-family: var(--mono); font-size: 12.5px; color: var(--ink-soft); margin: 0; }
+.open-to b { font-weight: 500; color: var(--ink); }
+
+/* spec table */
+.spec { margin: 0; border-top: 2px solid var(--ink); }
+.spec div { display: grid; grid-template-columns: 9.5em minmax(0, 1fr); gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--rule); }
+.spec dt { font-family: var(--mono); font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-soft); padding-top: 3px; }
+.spec dd { margin: 0; font-size: 15px; }
+.spec-title { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 8px; }
+
+/* sections */
+section { padding-block: 44px; border-bottom: 1px solid var(--rule); }
+.sec-head { display: grid; grid-template-columns: 11em minmax(0, 1fr); gap: 8px 32px; margin-bottom: 28px; }
+h2 { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: clamp(30px, 5vw, 44px); line-height: 1; margin: 0; letter-spacing: .01em; }
+h2::after { content: ""; display: block; width: 44px; height: 5px; margin-top: 10px; background: var(--acc); transition: background .3s, width .3s; }
+.sec-note { margin: 0; color: var(--ink-soft); max-width: 42em; }
+
+/* strengths */
+.strengths { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 32px; border-top: 2px solid var(--ink); }
+.strengths li { padding: 18px 0; border-bottom: 1px solid var(--rule); }
+.strengths h3 { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: 22px; line-height: 1.1; margin: 0 0 6px; }
+.strengths h3 span { background: linear-gradient(transparent 62%, var(--acc) 62%); }
+.strengths p { margin: 0; font-size: 15px; }
+
+/* catalogue rows */
+.cat { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
+.part {
+  display: grid; grid-template-columns: 8.5em minmax(0, 1fr); gap: 8px 32px; padding: 22px 0 22px 0;
+  border-bottom: 1px solid var(--rule); position: relative;
+}
+.part::before { content: ""; position: absolute; left: -12px; top: 0; bottom: 0; width: 0; background: var(--acc); transition: width .25s; }
+.part:hover::before, .part.match::before { width: 5px; }
+.code { font-family: var(--mono); font-size: 12px; letter-spacing: .05em; color: var(--ink-soft); text-transform: uppercase; }
+.status { display: inline-block; margin-top: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; padding: 3px 7px; background: var(--acc); color: var(--acc-ink); transition: background .3s; }
+.status.plain { background: transparent; border: 1px solid var(--ink-soft); color: var(--ink-soft); }
+.fit { display: none; margin-top: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
+.part.match .fit { display: block; }
+.fit::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 6px; background: var(--acc); }
+.part h3 { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: 28px; line-height: 1.05; margin: 0 0 8px; }
+.part p { margin: 0 0 10px; max-width: 46em; }
+.stack { font-family: var(--mono); font-size: 12.5px; color: var(--ink-soft); margin: 0; overflow-wrap: anywhere; }
+.stack b { font-weight: 500; color: var(--board); }
+
+/* experience + education */
+.rows { border-top: 2px solid var(--ink); }
+.row { display: grid; grid-template-columns: 11em minmax(0, 1fr); gap: 8px 32px; padding: 20px 0; border-bottom: 1px solid var(--rule); }
+.row .when { font-family: var(--mono); font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-soft); padding-top: 4px; }
+.row h3 { font-size: 18px; font-weight: 600; margin: 0 0 4px; }
+.row p { margin: 0; max-width: 44em; }
+.row ul { margin: 8px 0 0; padding-left: 18px; max-width: 44em; }
+.row li { margin-bottom: 4px; }
+
+/* skills */
+.skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; border-top: 2px solid var(--ink); }
+.skill { padding: 16px 0 16px 14px; border-bottom: 1px solid var(--rule); border-left: 4px solid transparent; transition: border-color .25s; }
+.skill.match { border-left-color: var(--acc); }
+.skill h3 { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; font-weight: 500; margin: 0 0 6px; color: var(--board); }
+.skill p { margin: 0; }
+
+/* contact */
+.contact { background: var(--panel); color: var(--panel-fg); padding: 36px max(20px, 4vw); margin-top: 44px; border-top: 6px solid var(--acc); transition: border-color .3s; }
+.contact h2 { color: var(--acc); margin-bottom: 14px; }
+.contact h2::after { background: var(--acc); }
+.contact p { margin: 0 0 18px; max-width: 36em; }
+.contact-list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; font-family: var(--mono); font-size: 14px; }
+.contact-list li { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.contact-list .k { width: 7em; color: var(--panel-soft); text-transform: uppercase; font-size: 12px; letter-spacing: .06em; }
+.contact a { color: var(--acc); overflow-wrap: anywhere; }
+.copy { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; background: transparent; color: var(--panel-fg); border: 1px solid var(--panel-fg); padding: 4px 9px; cursor: pointer; border-radius: 0; }
+.copy:hover { background: var(--acc); color: var(--acc-ink); border-color: var(--acc); }
+.foot { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); letter-spacing: .05em; text-transform: uppercase; padding-top: 18px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; }
+
+@media (max-width: 760px) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .sec-head, .row { grid-template-columns: minmax(0, 1fr); }
+  .part { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .part::before { left: -10px; }
+  .skills, .strengths { grid-template-columns: minmax(0, 1fr); }
+  .spec div { grid-template-columns: 7.5em minmax(0, 1fr); }
+  .contact-list .k { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  h1 .mark { animation: none; background-size: 100% 100%; }
+  * { transition: none !important; }
+}
+</style>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<div class="wrap">
+  <div class="strip">
+    <span>Strongs Engineering</span>
+    <span>Portfolio of Samuel Adesanya &middot; Rev. October 2026</span>
+  </div>
+
+  <header class="hero">
+    <p class="kicker" id="kicker">Engineer, developer and instructor</p>
+    <h1>Samuel <span class="mark">Adesanya</span></h1>
+    <div class="hero-grid">
+      <div>
+        <p class="lede" id="lede">I explain technical ideas clearly, build working systems from scratch, and organise the lessons, documents and plans around them. I teach in Lagos schools, build apps and electronics, and I am applying for roles where that mix is useful.</p>
+
+        <p class="lens-label">View my work as</p>
+        <div class="lens" id="lens" role="group" aria-label="Choose a role view">
+          <button type="button" data-lens="all" aria-pressed="true"><i></i>Everything</button>
+          <button type="button" data-lens="engineer" aria-pressed="false"><i></i>Engineer</button>
+          <button type="button" data-lens="developer" aria-pressed="false"><i></i>Developer</button>
+          <button type="button" data-lens="educator" aria-pressed="false"><i></i>Educator</button>
+          <button type="button" data-lens="coordinator" aria-pressed="false"><i></i>Coordinator</button>
+        </div>
+        <p class="open-to"><b>Open to:</b> engineering, software, teaching, training, technical support and project coordination roles.</p>
+      </div>
+      <div>
+        <p class="spec-title">Quick reference</p>
+        <dl class="spec">
+          <div><dt>Based in</dt><dd>Oshodi, Lagos, Nigeria</dd></div>
+          <div><dt>Current role</dt><dd>Coding and robotics instructor, NHAMES Project Limited</dd></div>
+          <div><dt>Training</dt><dd>HND and OND, Electrical &amp; Electronics Engineering, Yaba College of Technology</dd></div>
+          <div><dt>Studying</dt><dd>Software Development, BYU-Idaho via BYU-Pathway Worldwide</dd></div>
+          <div><dt>Works with</dt><dd>Arduino, ESP32, Flutter, Node.js, Firebase</dd></div>
+        </dl>
+      </div>
+    </div>
+  </header>
+
+  <section id="strengths">
+    <div class="sec-head">
+      <h2>What I bring</h2>
+      <p class="sec-note">Skills that carry over to any team, each backed by something I have done.</p>
+    </div>
+    <ul class="strengths">
+      <li><h3><span>Explaining clearly</span></h3><p>I teach learners from Primary 1 to secondary school across several branches, and I write guides that other trainers use.</p></li>
+      <li><h3><span>Building from nothing</span></h3><p>I have shipped apps and devices for schools, pupils and a residents association, from first idea to something people use.</p></li>
+      <li><h3><span>Planning and paperwork</span></h3><p>Schemes of work, a PMI-aligned course companion, project cost documents and pitch decks. I keep the plan and the files in order.</p></li>
+      <li><h3><span>Solving across fields</span></h3><p>I work with hardware, software and people, so I can trace a fault from the wiring to the screen to the classroom.</p></li>
+      <li><h3><span>Learning while working</span></h3><p>I am studying for a software degree while teaching, and I picked up Flutter, Node.js, Firebase and AI tools to build real projects.</p></li>
+      <li><h3><span>Building for Nigeria</span></h3><p>My tools use Lagos data, Common Entrance material and local patterns, so they fit the people who will use them.</p></li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <div class="sec-head">
+      <h2>Projects</h2>
+      <p class="sec-note">Systems and materials I have built. Pick a role view above and the most relevant work moves to the top.</p>
+    </div>
+
+    <ul class="cat" id="cat">
+      <li class="part" data-i="1" data-lens="developer">
+        <div><div class="code">SA-01</div><span class="status">Deployed</span><span class="fit">Fits this view</span></div>
+        <div>
+          <h3>WinsPrep</h3>
+          <p>An AI-powered exam preparation app for Nigerian Primary 6 pupils sitting the Common Entrance exam. It has a quiz generator, an AI tutor, a grammar coach, a study planner and a parent dashboard, with an interface drawn from Ankara and Adire patterns.</p>
+          <p class="stack"><b>Stack</b> Gemini API &middot; Vercel serverless functions &middot; web front end</p>
+        </div>
+      </li>
+      <li class="part" data-i="2" data-lens="developer">
+        <div><div class="code">SA-02</div><span class="status">Deployed</span><span class="fit">Fits this view</span></div>
+        <div>
+          <h3>Nexora</h3>
+          <p>An all-in-one education, productivity and finance app released under Strongs Engineering. It offers five AI personas, user sign-in and saved data, and routes its API calls through a Cloudflare Workers proxy.</p>
+          <p class="stack"><b>Stack</b> Firebase Auth &middot; Firestore &middot; Cloudflare Workers &middot; GitHub Pages / Netlify</p>
+        </div>
+      </li>
+      <li class="part" data-i="3" data-lens="engineer developer">
+        <div><div class="code">SA-03</div><span class="status">Built</span><span class="fit">Fits this view</span></div>
+        <div>
+          <h3>Strongs Robot controllers</h3>
+          <p>Two Flutter Android apps for Arduino hardware. One switches a 4-channel relay system over Bluetooth. The other drives a robot with several operating modes.</p>
+          <p class="stack"><b>Stack</b> Flutter &middot; Arduino &middot; HC-05 / HC-06 Bluetooth &middot; relay modules</p>
+        </div>
+      </li>
+      <li class="part" data-i="4" data-lens="engineer coordinator">
+        <div><div class="code">SA-04</div><span class="status plain">Applied</span><span class="fit">Fits this view</span></div>
+        <div>
+          <h3>Smart home automation system</h3>
+          <p>An Arduino-based home automation system. I submitted it to a national education venture programme and pitched the wider service line (home automation, smart door locks, solar and electrical work) in a Strongs Engineering IoT deck.</p>
+          <p class="stack"><b>Stack</b> Arduino &middot; IoT &middot; electrical installation</p>
+        </div>
+      </li>
+      <li class="part" data-i="5" data-lens="developer coordinator">
+        <div><div class="code">SA-05</div><span class="status">Deployed</span><span class="fit">Fits this view</span></div>
+        <div>
+          <h3>Residents' receipt bot</h3>
+          <p>A WhatsApp bot for the Airport Close Residents Association. It produces PDF receipts and records them in a Google Sheet.</p>
+          <p class="stack"><b>Stack</b> Node.js &middot; Baileys &middot; Gemini &middot; PDFKit &middot; Google Sheets API &middot; Railway</p>
+        </div>
+      </li>
+      <li class="part" data-i="6" data-lens="developer educator coordinator">
+        <div><div class="code">SA-06</div><span class="status">Built</span><span class="fit">Fits this view</span></div>
+        <div>
+          <h3>Oakville School management system</h3>
+          <p>A school management system in a single HTML file, in the school's green and white colours. It includes a computer-based test feature and a panel where teachers create lesson content. Sample data is Lagos-based.</p>
+          <p class="stack"><b>Stack</b> HTML &middot; CSS &middot; JavaScript</p>
+        </div>
+      </li>
+      <li class="part" data-i="7" data-lens="educator engineer coordinator">
+        <div><div class="code">SA-07</div><span class="status">In use</span><span class="fit">Fits this view</span></div>
+        <div>
+          <h3>Coding and robotics curriculum</h3>
+          <p>Schemes of work for Winsmart Primary School (Primary 1 to 6) and Elias Primary School (lower and upper primary), plus ScratchJr lessons, a clap-switch Arduino project, a Space Shooter game in Scratch, and termly overviews for Foluade Group of Schools. I also built the StackLabs pitch deck that presents this curriculum to Lagos school administrators.</p>
+          <p class="stack"><b>Stack</b> Scratch &middot; ScratchJr &middot; Arduino &middot; Word &middot; PowerPoint</p>
+        </div>
+      </li>
+      <li class="part" data-i="8" data-lens="educator coordinator">
+        <div><div class="code">SA-08</div><span class="status">In use</span><span class="fit">Fits this view</span></div>
+        <div>
+          <h3>Training materials</h3>
+          <p>An AI Fundamentals facilitation guide for graduate trainees from NHAMES Projects Limited, an instructor companion for a two-day project management course aligned to PMI practice with Nigerian business examples, and a web design lesson for the Elias ICT Club.</p>
+          <p class="stack"><b>Stack</b> Facilitation guides &middot; Google Sites &middot; Word</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <div class="sec-head">
+      <h2>Experience</h2>
+      <p class="sec-note">Where the work happens day to day.</p>
+    </div>
+    <div class="rows">
+      <div class="row">
+        <div class="when">Current</div>
+        <div>
+          <h3>Coding and Robotics Instructor, NHAMES Project Limited</h3>
+          <p>I teach primary and secondary school learners across several branches.</p>
+          <ul>
+            <li>Plan schemes of work and termly curriculum overviews for partner schools.</li>
+            <li>Teach Scratch, ScratchJr, Arduino electronics and web basics.</li>
+            <li>Write facilitation guides and lesson decks for trainers and graduate trainees.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">Ongoing</div>
+        <div>
+          <h3>Engineer, Strongs Engineering</h3>
+          <p>My own engineering practice. It covers IoT and home automation, smart door locks, solar and electrical services, custom robots, and software products such as Nexora.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="sec-head">
+      <h2>Education</h2>
+      <p class="sec-note">Hardware first, software alongside.</p>
+    </div>
+    <div class="rows">
+      <div class="row">
+        <div class="when">In progress</div>
+        <div>
+          <h3>Software Development, BYU-Idaho (BYU-Pathway Worldwide)</h3>
+          <p>Degree study in progress.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">Completed</div>
+        <div>
+          <h3>Higher National Diploma, Electrical &amp; Electronics Engineering</h3>
+          <p>Yaba College of Technology, Lagos.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when">2023</div>
+        <div>
+          <h3>National Diploma, Electrical &amp; Electronics Engineering</h3>
+          <p>Yaba College of Technology, Lagos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head">
+      <h2>Skills</h2>
+      <p class="sec-note">Tools I have used in the projects above.</p>
+    </div>
+    <div class="skills" id="skills-grid">
+      <div class="skill" data-lens="engineer"><h3>Embedded and electrical</h3><p>Arduino, ESP32, relay control, Bluetooth modules, lithium-ion 2S battery packs, home automation, solar and electrical engineering.</p></div>
+      <div class="skill" data-lens="developer engineer"><h3>Mobile</h3><p>Flutter apps for Android that talk to hardware over Bluetooth.</p></div>
+      <div class="skill" data-lens="developer"><h3>Web and back end</h3><p>HTML, CSS, JavaScript, Node.js, Firebase and Firestore, Cloudflare Workers, Vercel serverless functions, Google Sheets API.</p></div>
+      <div class="skill" data-lens="developer"><h3>AI integration</h3><p>Gemini API in tutoring, quiz and receipt-processing tools.</p></div>
+      <div class="skill" data-lens="educator"><h3>Teaching</h3><p>Scratch, ScratchJr, curriculum and scheme-of-work design, facilitation guides, classroom delivery from Primary 1 to secondary.</p></div>
+      <div class="skill" data-lens="coordinator educator"><h3>Documents and pitching</h3><p>Pitch decks, training manuals, cost documents for electronics and robotics projects.</p></div>
+    </div>
+  </section>
+
+  <div class="contact" id="contact">
+    <h2>Contact</h2>
+    <p>Open to interviews, trial lessons and project work. Reach me by phone or LinkedIn.</p>
+    <ul class="contact-list">
+      <li><span class="k">Phone</span><span id="phone">07086907911</span><button class="copy" type="button" id="copy-phone">Copy</button></li>
+      <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/samuel-adesanya-023a8b40b" rel="noopener">linkedin.com/in/samuel-adesanya-023a8b40b</a></li>
+      <li><span class="k">Location</span><span>Oshodi, Lagos, Nigeria</span></li>
+    </ul>
+  </div>
+
+  <div class="foot"><span>Samuel Adesanya</span><span>Strongs Engineering &middot; Lagos</span></div>
+</div>
+
+<script>
+(function () {
+  var COPY = {
+    all: {
+      kicker: 'Engineer, developer and instructor',
+      lede: 'I explain technical ideas clearly, build working systems from scratch, and organise the lessons, documents and plans around them. I teach in Lagos schools, build apps and electronics, and I am applying for roles where that mix is useful.'
+    },
+    engineer: {
+      kicker: 'Electrical and electronics engineer',
+      lede: 'I am trained in electrical and electronics engineering and I build with Arduino and ESP32: relay control, Bluetooth, battery packs, home automation and solar. I have taken devices from a bench prototype to something a client can use.'
+    },
+    developer: {
+      kicker: 'Software developer',
+      lede: 'I build web and mobile software end to end: Flutter apps, Node.js services, Firebase back ends and AI features. Several of my projects are live and used by schools, pupils and a residents association.'
+    },
+    educator: {
+      kicker: 'Coding and robotics instructor',
+      lede: 'I teach coding and robotics to learners from Primary 1 to secondary school. I write the schemes of work and lesson materials myself, and I turn technical topics into lessons that children follow and enjoy.'
+    },
+    coordinator: {
+      kicker: 'Project and training coordinator',
+      lede: 'I turn rough ideas into clear plans: schemes of work, cost documents, pitch decks and training guides. I keep the paperwork organised, work to a brief, and see the result used in schools and community groups.'
+    }
+  };
+  var HASH = { engineer: 1, developer: 1, educator: 1, coordinator: 1 };
+
+  var body = document.body;
+  var buttons = document.querySelectorAll('#lens button');
+  var kicker = document.getElementById('kicker');
+  var lede = document.getElementById('lede');
+  var cat = document.getElementById('cat');
+  var parts = Array.prototype.slice.call(cat.querySelectorAll('.part'));
+  var skills = document.querySelectorAll('#skills-grid .skill');
+
+  function has(el, lens) { return (' ' + el.getAttribute('data-lens') + ' ').indexOf(' ' + lens + ' ') !== -1; }
+
+  function apply(lens) {
+    if (lens === 'all') body.removeAttribute('data-lens'); else body.setAttribute('data-lens', lens);
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-lens') === lens ? 'true' : 'false'); });
+    kicker.textContent = COPY[lens].kicker;
+    lede.textContent = COPY[lens].lede;
+    parts.sort(function (a, b) {
+      var am = lens !== 'all' && has(a, lens) ? 0 : 1;
+      var bm = lens !== 'all' && has(b, lens) ? 0 : 1;
+      if (am !== bm) return am - bm;
+      return (+a.getAttribute('data-i')) - (+b.getAttribute('data-i'));
+    });
+    parts.forEach(function (p) {
+      p.classList.toggle('match', lens !== 'all' && has(p, lens));
+      cat.appendChild(p);
+    });
+    skills.forEach(function (s) { s.classList.toggle('match', lens !== 'all' && has(s, lens)); });
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var lens = b.getAttribute('data-lens');
+      apply(lens);
+      try { history.replaceState(null, '', lens === 'all' ? location.pathname + location.search : '#' + lens); } catch (e) {}
+    });
+  });
+
+  function fromHash() {
+    var h = (location.hash || '').replace('#', '');
+    apply(HASH[h] ? h : 'all');
+  }
+  window.addEventListener('hashchange', fromHash);
+  fromHash();
+
+  var bar = document.getElementById('progress');
+  function onScroll() {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+    bar.style.transform = 'scaleX(' + p + ')';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  var copyBtn = document.getElementById('copy-phone');
+  var phone = document.getElementById('phone');
+  copyBtn.addEventListener('click', function () {
+    var text = phone.textContent.trim();
+    function done() { copyBtn.textContent = 'Copied'; setTimeout(function () { copyBtn.textContent = 'Copy'; }, 1500); }
+    function fallback() {
+      var r = document.createRange(); r.selectNodeContents(phone);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      copyBtn.textContent = 'Selected'; setTimeout(function () { copyBtn.textContent = 'Copy'; }, 1500);
+    }
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+  });
+})();
+</script>
+
+</body></html>
